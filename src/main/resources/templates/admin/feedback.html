@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="admin/base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title></title>
+</head>
+<body>
+
+	<section>
+		<div class="table_responsive feedback ">
+			<h2>FEEDBACK</h2>
+			<!-- search  -->
+			<div class="search-container my-4">
+			
+				
+			</div>
+
+			<!--  -->
+			<div class="card feedbackcard" style="width: 40rem;" th:each="c:${contact}">
+  <div class="card-body " >
+    <h5 class="card-title" th:text="${c.fullName}" style="font-size: 15px; ">Card title</h5>
+    
+    <h6 class="card-subtitle mb-2 text-muted" th:text="${c.email}" >Card subtitle</h6>
+    <h6 class="card-subtitle mb-2 text-muted" th:text="${c.subject}">Card subtitle</h6>
+    <p class="card-text" th:text="${c.message}" >Some quick example text to build on the card title and make up the bulk of the card's content.</p> 
+  </div>
+</div>
+			
+
+
+		</div>
+
+	<nav aria-label="Page navigation example " class="feedbackpage">
+
+				<ul class="pagination">
+
+					<li th:if="${currentpage !=0}"
+						th:href="@{'/admin/feedback/'+${currentpage-1}}"
+						class="page-item"><a
+						th:href="@{'/admin/feedback/'+${currentpage-1}}"
+						class="page-link" href="#">Previous</a></li>
+
+					<li th:classappend="${currentpage==i-1 ? 'active':''}"
+						th:each="i : ${#numbers.sequence(1,totalpages)}" class="page-item"><a
+						th:href="@{'/admin/feedback/'+${i-1}}" class="page-link"
+						href="#"><span th:text="${i}"></span></a></li>
+
+
+
+					<li th:if="${currentpage+1 !=totalpages}"
+						th:href="@{'/admin/feedback/'+${currentpage+1}}"
+						class="page-item"><a
+						th:href="@{'/admin/feedback/'+${currentpage+1}}"
+						class="page-link" href="#">Next</a></li>
+				</ul>
+			</nav>
+		
+	
+	</section>
+
+</body>
+</html>

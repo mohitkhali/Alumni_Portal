@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="admin/base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title></title>
+</head>
+<body>
+
+	<section>
+		<div class="table_responsive ">
+			<h2>UN-VERFIED USERS</h2>
+			<!-- search  -->
+			<div class="search-container my-4">
+			
+				<input onkeyup="search()" type="text" placeholder="Search..."
+					class="form-control" id="search-input" />
+				<div class="search-result">
+			
+				</div>
+			</div>
+
+			<!--  -->
+			<table>
+
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Name</th>
+						<th>Email</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr th:each="c : ${userlist}">
+						<td th:text="${c.UId}"></td>
+						<td th:text="${c.fullName}"></td>
+						
+						<td th:text="${c.email}"></td>
+						<td>
+							<form action="" class="btn-form" method="get"
+								th:action="@{'/admin/user/profile/'+${c.UId}}">
+								<button id="button1">View</button>
+
+							</form> 
+						</td>
+					</tr>
+
+
+				</tbody>
+			</table>
+			<nav aria-label="Page navigation example">
+
+				<ul class="pagination">
+
+					<li th:if="${currentpage !=0}"
+						th:href="@{'/admin/verifiedList/'+${currentpage-1}}"
+						class="page-item"><a
+						th:href="@{'/admin/verifiedList/'+${currentpage-1}}"
+						class="page-link" href="#">Previous</a></li>
+
+					<li th:classappend="${currentpage==i-1 ? 'active':''}"
+						th:each="i : ${#numbers.sequence(1,totalpages)}" class="page-item"><a
+						th:href="@{'/admin/verifiedList/'+${i-1}}" class="page-link"
+						href="#"><span th:text="${i}"></span></a></li>
+
+
+
+					<li th:if="${currentpage+1 !=totalpages}"
+						th:href="@{'/admin/verifiedList/'+${currentpage+1}}"
+						class="page-item"><a
+						th:href="@{'/admin/verifiedList/'+${currentpage+1}}"
+						class="page-link" href="#">Next</a></li>
+				</ul>
+			</nav>
+
+
+		</div>
+
+
+		
+	
+	</section>
+
+</body>
+</html>

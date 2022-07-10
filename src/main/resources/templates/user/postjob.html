@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="user/base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title></title>
+</head>
+<body>
+	<section>
+
+		<div class="container-fluid px-1 py-5 mx-auto postjobcontainer">
+			<div class="row d-flex justify-content-center">
+				<div class="col-xl-7 col-lg-8 col-md-9 col-11">
+
+
+					<div class="card">
+						<form th:action="@{/user/job}" method="post" th:object="${job}">
+							<div class="form-group">
+								<label for="exampleFormControlInput1">Company name</label> <input
+									name="companyName" type="text" class="form-control"
+									id="exampleFormControlInput1" placeholder="Company name..">
+							</div>
+							<div class="form-group">
+								<label for="exampleFormControlInput1">job Role</label> <input
+									name="jobRole" type="text" class="form-control"
+									id="exampleFormControlInput1" placeholder="job Role...">
+							</div>
+
+							<div class="form-group">
+								<label for="exampleFormControlInput1">location</label> <input
+									name="location" type="text" class="form-control"
+									id="exampleFormControlInput1" placeholder="location...">
+							</div>
+
+							<div class="form-group">
+								<label for="exampleFormControlInput1">Required skills</label> <input
+									name="requiredSkills" type="text" class="form-control"
+									id="exampleFormControlInput1" placeholder="Required skills...">
+							</div>
+
+							<div class="form-group">
+								<label for="exampleFormControlInput1">Experience</label> <input
+									name="experience" pattern="[1-9]{1}[0-9]{9}"
+									inputmode="numeric" type="number"
+									class="form-control no-spinner" id="exampleFormControlInput1"
+									placeholder="Experience...">
+							</div>
+
+							<div class="form-group">
+								<label for="exampleFormControlInput1">Salary</label> <input
+									name="salary" type="number" class="form-control no-spinner"
+									id="exampleFormControlInput1" pattern="[1-9]{1}[0-9]{9}"
+									placeholder="Salary...">
+							</div>
+							<div class="form-group">
+								<label for="exampleFormControlInput1">Company Website</label> <input
+									name="companyWebsite" type="text" class="form-control"
+									id="exampleFormControlInput1" 
+									placeholder="link...">
+							</div>
+							<div class="form-group">
+								<label for="exampleFormControlInput1">Apply Link</label> <input
+									name="applyLink" type="text" class="form-control"
+									id="exampleFormControlInput1" 
+									placeholder="link...">
+							</div>
+							<div class='form-group'>
+								<label for='message'>About Job</label>
+								<textarea class='form-control' name='aboutJob' rows='8'
+									placeholder="About..."></textarea>
+							</div>
+							<div class='form-group text-center'>
+							<button type="submit" class="btn btn-primary">Post Job</button>
+							</div>
+							
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</section>
+
+</body>
+</html>

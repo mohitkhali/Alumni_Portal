@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>ALUMNIA PORTAL</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link th:href="@{/assets/img/favicon.png}" rel="icon">
+  <link th:href="@{/assets/img/apple-touch-icon.png}" rel="apple-touch-icon">
+  <link href='https://fon ts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link th:href="@{/assets/vendor/animate.css/animate.min.css}" rel="stylesheet">
+  <link th:href="@{/assets/vendor/aos/aos.css}" rel="stylesheet">
+  <link th:href="@{/assets/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+  <link th:href="@{/assets/vendor/bootstrap-icons/bootstrap-icons.css}" rel="stylesheet">
+  <link th:href="@{/assets/vendor/boxicons/css/boxicons.min.css}" rel="stylesheet">
+  <link th:href="@{/assets/vendor/glightbox/css/glightbox.min.css}" rel="stylesheet">
+  <link th:href="@{/assets/vendor/swiper/swiper-bundle.min.css}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link th:href="@{/assets/css/style.css}" rel="stylesheet">
+
+ 
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+    <div class="container d-flex justify-content-between align-items-center">
+
+      <div class="logo">
+        <h1 class="text-light"><a th:href="@{/home}"><span>ALUMNI PORTAL</span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="active " th:href="@{/home}">Home</a></li>
+         
+          <li><a th:href="@{/services}">Services</a></li>
+         
+        
+          <li><a th:href="@{/contact}">Contact Us</a></li>
+          <li><a th:href="@{/login}">Log In</a></li>
+          <li><a th:href="@{/signUp}">Sign up</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+      <!-- .navbar -->
+
+    </div>
+  </header>
+  <!-- End Header -->
+
+  
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex justify-cntent-center align-items-center">
+    <div id="heroCarousel" class="container carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+
+      <!-- Slide 1 -->
+      <div class="carousel-item active">
+        <div class="carousel-container">
+          <h2 class="animate__animated animate__fadeInDown">WELCOME TO   <span>'ALUMNI-PORTAL'</span></h2>
+          <p class="animate__animated animate__fadeInUp">Platform where the college, alumni and the institute/college students can interact with each other for their benefit. The students can share their views or queries or experiences on to portal regarding certain events and internship opportunities</p>
+          <a href="#main" class="btn-get-started animate__animated animate__fadeInUp">Start</a>
+        </div>
+      </div>
+
+      
+
+    </div>
+  </section>
+  <hr>
+  
+  <!-- End Hero -->
+
+
+
+ 
+
+
+
+
+
+
+  <main id="main">
+
+
+
+
+    <section class="jumbotron bg-cover" style="background-image: linear-gradient(to bottom, rgba(64, 90, 104, 0.8), rgba(71, 131, 161, 0.6)), url(assets/img/background.jpg);">
+      <h1>Connect To Alimni Community</h1>
+      <p>Build the connections with others and take the advantages of this opportunity</p>
+      <a th:href="@{/login}" class="button" style="margin-right: 19px; border-radius: 16px;">login In     </a>
+      <a th:href="@{/signUp}" class="button"style="border-radius:16px; margin-right: 19px;">Sign Up</a>
+      
+     
+    </section>
+
+
+  
+
+
+    
+      
+
+
+
+    <!-- ======= Features Section ======= -->
+    <section class="features">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Features</h2>
+          <p> </p>
+        </div>
+
+        <div class="row" data-aos="fade-up">
+          <div class="col-md-5">
+            <img src="assets/img/features-1.svg" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7 pt-4">
+            <h3>Easy Sign-up</h3>
+            <p class="fst-italic">
+             You can always return to the homepage by clicking Alumni Federation logo at any time
+            </p>
+            <ul>
+              <li><i class="bi bi-check"></i>If you prefer to sign up using your email address, click on "Manual Sign In." Then, click "Create Account" and fill out the registration form</li>
+              <li><i class="bi bi-check"></i> In order to protect the privacy of our alumni, after you have created your account the Alumni Federation will verify your identity against our records before granting you access to the site</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row" data-aos="fade-up">
+          <div class="col-md-5 order-1 order-md-2">
+            <img src="assets/img/features-2.svg" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7 pt-5 order-2 order-md-1">
+            <h3>Update Your Information Online</h3>
+            <p class="fst-italic">
+              Update your Alumni DIRECTORY  information by clicking on the "My Profile" button on the homepage (once you are signed in). Apart from basic info - such as education, employment, accomplishments - your personal details will only be viewable to the Alumni Federation staff and you
+            </p>
+            <p>
+              Update your Alumni DIRECTORY  information by clicking on the "My Profile" button on the homepage (once you are signed in). Apart from basic info - such as education, employment, accomplishments - your personal details will only be viewable to the Alumni Federation staff and you.
+
+             You can update information about your  social media profiles like Facebook, LinkedIn, Twitter, etc. You also have the opportunity to list your skills and interests.
+            </p>
+          </div>
+        </div>
+
+        <div class="row" data-aos="fade-up">
+          <div class="col-md-5">
+            <img src="assets/img/features-3.svg" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7 pt-5">
+            <h3>Contact Other Alumni</h3>
+            <p>To send a message to an alumnus, select their profile and click "Send Message."</p>
+            <ul>
+              <li><i class="bi bi-check"></i> Messages will be delivered to the email address of the alumnus regardless of whether they are active on the website or not.</li>
+              <li><i class="bi bi-check"></i> If you notice an "Invite to signup" button underneath someone's profile picture, feel free to click it to invite them to join the website.</li>
+              <li><i class="bi bi-check"></i> All the contack details are available in their profile </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row" data-aos="fade-up">
+          <div class="col-md-5 order-1 order-md-2">
+            <img src="assets/img/features-4.svg" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7 pt-5 order-2 order-md-1">
+            <h3>Get Daily new events news,alumni posts and more</h3>
+            <p class="fst-italic">
+              Discover alumni events right on the homepage in the "Upcoming Events" section. Selecting an event provides event information and the ability to register online. You may also go find "Events" in navigation bar
+            </p>
+            <p>
+              Read the latest news about your fellow alumni,Share your own news
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Features Section -->
+
+
+    <div class="section-title">
+      <h2>TEAM</h2>
+      <p> </p>
+    </div>
+    <section class="breadcrumbs">
+      <div class="container">
+
+      </div>
+    </section><!-- End Our Team Section -->
+
+    <!-- ======= Team Section ======= -->
+    <section class="team" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <div class="member-img">
+                <img th:src="@{/images/avatar7.png}" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>SACHIN SINGH NEGI</h4>
+                <span>PYTHON DEVELOPER</span>
+                <p></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <div class="member-img">
+                <img th:src="@{/images/avatar7.png}" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>MOHIT PRASAD</h4>
+                <span>JAVA DEVELOPER</span>
+                <p></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <div class="member-img">
+                <img th:src="@{/images/avatar7.png}"class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>GAURAV NEGI</h4>
+                <span>WEB DEVELOPER</span>
+                <p></p>
+              </div>
+            </div>
+          </div>
+ <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <div class="member-img">
+                <img th:src="@{/images/avatar7.png}" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>YASHPAL BISHT</h4>
+                <span>WEB DEVELOPER</span>
+                <p></p>
+              </div>
+            </div>
+          </div>
+          
+
+          
+
+          
+
+        </div>
+
+      </div>
+    </section>
+
+
+
+    <!-- sfgf -->
+    
+    <!-- ======= Service Details Section ======= -->
+    <section class="service-details">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+            <div class="card">
+              <div class="card-img">
+                <img src="assets/img/service-details-1.jpg" alt="...">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title"><a href="#">Our Mission</a></h5>
+                <p class="card-text">The mission of the Connecticut College Alumni Association is to lead alumni in fostering strong connections with each other and Connecticut College as the College assumes its place at the forefront of liberal arts education.
+
+                  </p>
+                <div class="read-more"><a href="#"><i class="bi bi-arrow-right"></i> Read More</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+            <div class="card">
+              <div class="card-img">
+                <img src="assets/img/service-details-2.jpg" alt="...">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title"><a href="#">Our Plan</a></h5>
+                <p class="card-text">Recognize that alumni offer a great diversity of talents, skills and abilities, which should be acknowledged and engaged to benefit the College, the Association and one another.
+                  Provide programs and opportunities that connect alumni to each other and to the College.
+                  
+                  </p>
+                <div class="read-more"><a href="#"><i class="bi bi-arrow-right"></i> Read More</a></div>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-6 " data-aos="fade-up"style="display: block; margin-left: auto; margin-right: auto;">
+            <div class="card">
+              <div class="card-img "  >
+                <img src="assets/img/service-details-3.jpg" alt="...">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title"><a href="#">Our Vision</a></h5>
+                <p class="card-text">To promote a goodwill and sense of pride to both alumni and students. To help and support alumnus develop and spread a philanthropic and entrepreneurial mindset among students. To advice and conduct activities that shall motivate and upgrade student skill sets</p>
+                <div class="read-more"><a href="#"><i class="bi bi-arrow-right"></i> Read More</a></div>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+            <div class="card">
+              <div class="card-img">
+                <img src="assets/img/service-details-4.jpg" alt="...">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title"><a href="#">Our Care</a></h5>
+                <p class="card-text">Nostrum eum sed et autem dolorum perspiciatis. Magni porro quisquam laudantium voluptatem. In molestiae earum ab sit esse voluptatem. Eos ipsam cumque ipsum officiis qui nihil aut incidunt aut</p>
+                <div class="read-more"><a href="#"><i class="bi bi-arrow-right"></i> Read More</a></div>
+              </div>
+            </div>
+          </div> -->
+        </div>
+
+      </div>
+    </section>
+
+
+
+
+
+    <!-- df -->
+
+
+
+
+
+  </main><!-- End #main -->
+
+
+  
+  <!-- Vendor JS Files -->
+  <script th:src="@{/assets/vendor/purecounter/purecounter.js}"></script>
+  <script th:src="@{/assets/vendor/aos/aos.js}"></script>
+  <script th:src="@{/assets/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+  <script th:src="@{/assets/vendor/glightbox/js/glightbox.min.js}"></script>
+  <script th:src="@{/assets/vendor/isotope-layout/isotope.pkgd.min.js}"></script>
+  <script th:src="@{/assets/vendor/swiper/swiper-bundle.min.js}"></script>
+  <script th:src="@{/assets/vendor/waypoints/noframework.waypoints.js}"></script>
+  <script th:src="@{/assets/vendor/php-email-form/validate.js}"></script>
+
+  <!-- Template Main JS File -->
+  <script th:src="@{/assets/js/main.js}"></script>
+
+</body>
+
+</html>

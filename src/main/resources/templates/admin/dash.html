@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="admin/base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>DashBoard</title>
+</head>
+<body>
+
+<section>
+
+<div class="container dashcards" >
+    <div class="row">
+        <div class="col-md-4 col-xl-3 mt-5 ml-5 " >
+            <div class="card bg-c-blue order-card">
+                <div class="card-block">
+                    <h6 class="m-b-20">Unverified Users</h6>
+                    <h2 class="text-right"><i class="fa fa-refresh f-left"></i><span th:text=${unvN}>486</span></h2>
+                    <p class="m-b-0">Total Users<span class="f-right" th:text=${tN}>351</span></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 col-xl-3 mt-5">
+            <div class="card bg-c-green order-card">
+                <div class="card-block">
+                    <h6 class="m-b-20">Verified Users</h6>
+                    <h2 class="text-right"><i class="fa fa-refresh f-left"></i><span th:text=${vN}>486</span></h2>
+                    <p class="m-b-0">Total Users<span class="f-right" th:text=${tN}>351</span></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 col-xl-3 mt-5">
+            <div class="card bg-c-yellow order-card">
+                <div class="card-block">
+                    <h6 class="m-b-20">Website Hits</h6>
+                    <h2 class="text-right"><i class="fa fa-refresh f-left"></i><span>486</span></h2>
+                    <p class="m-b-0">Total Hits<span class="f-right">351</span></p>
+                </div>
+            </div>
+        </div>
+        
+      </div>
+      </div>
+
+</section>
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>editalumni</title>
+    <link rel="stylesheet" th:href="@{/css/EditProfile.css}">
+     <!-- <link href="assets/css/style.css" rel="stylesheet">  -->
+
+    	<!-- Favicons -->
+	<link th:href="@{assets/img/favicon.png}" rel="icon">
+	<link th:href="@{assets/img/apple-touch-icon.png}" rel="apple-touch-icon">
+	<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+  
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+  
+	<!-- Vendor CSS Files -->
+	<link th:href="@{assets/vendor/animate.css/animate.min.css}" rel="stylesheet">
+	<link th:href="@{assets/vendor/aos/aos.css}" rel="stylesheet">
+	<link th:href="@{assets/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+	<link th:href="@{assets/vendor/bootstrap-icons/bootstrap-icons.css}" rel="stylesheet">
+	<link th:href="@{assets/vendor/boxicons/css/boxicons.min.css}" rel="stylesheet">
+	<link th:href="@{assets/vendor/glightbox/css/glightbox.min.css}" rel="stylesheet">
+	<link th:href="@{assets/vendor/swiper/swiper-bundle.min.css}" rel="stylesheet">
+  
+</head>
+ <body class="img js-fullheight"  style="background-color: linear-gradient( rgba(102, 155, 184, 0.8), rgba(33, 82, 106, 0.6)), "> 
+    <div class="container-xl px-4 mt-4" style="margin-top: 20px;">
+       <h1 style="text-align: center;margin-top:10px;font-family:sans-serif ;">Alumni Details</h1>
+
+        <hr class="mt-0 mb-4">
+        <div class="row">
+           
+            <div class="col-xl-12">
+                <!-- Account details card-->
+                <div class="card mb-4">
+                    <div class="card-header">Account Details</div>
+                    <div class="card-body">
+                        
+                            <!-- --------------------------------------FORM------------------------------------------ -->
+                         
+                            <form th:action=@{/profileDetails} method="post" enctype="multipart/form-data" th:object=${userFullInfo} >  
+
+
+                            <div class="col-xl-12 ">
+               
+                    <div class="card mb-6 mb-xl-0"style="height: 160px;">
+                    
+                        <div class="card-body text-center"  >
+                           
+                        
+                            <div class="small font-italic text-muted mb-4" style="font-weight: bold;">Upload Your Profile Picture</div>
+                        <!-- <div class="file btn btn-lg btn-primary" style=" position: relative;overflow: hidden">
+                                Upload
+                                <input style=" position: absolute;
+                                font-size: 50px;
+                                opacity: 0;
+                                right: 0;
+                                top: 0;"type="file" id="file" name="file/">
+                            </div> -->
+                            <div class="form-group">
+                        
+                              <input type="file" id="file" name="userProfileImage" required accept="image/png, image/gif, image/jpeg" >
+                            
+                            </div>
+                        </div>
+                    </div>
+            </div><br>
+                           
+                           
+                           
+                            <div class="row gx-3 mb-3 form-group"style="font-weight:bold">
+                               
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="fathername">Name</label>
+                                    <input class="form-control" id="fathername" type="text" placeholder="Enter your Father's Name" name="fatherName"  required>
+                                </div>
+                               
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="fathername">Father's Name</label>
+                                    <input class="form-control" id="fathername" type="text" placeholder="Enter your Father's Name" name="fatherName"  required>
+                                </div>
+                             
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="mothername">Mother's Name</label>
+                                    <input class="form-control" id="mothername" type="text" placeholder="Enter your Mother's Name" name ="motherName" required="required">
+                                </div>
+                            </div>
+                            
+                            <div class="row gx-3 mb-3"style="font-weight:bold">
+                            
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputOrgName">City</label>
+                                    <input class="form-control" id="inputOrgName" type="text" placeholder="Enter your City" name="city" required="required">
+                                </div>
+                            
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputLocation">State</label>
+                                    <input class="form-control" id="inputLocation" type="text" placeholder="Enter your State" name="state" required="required">
+                                
+                                </div>
+                               
+                            </div>
+                            
+                            <div class="row gx-3 mb-3"style="font-weight:bold">
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputEmailAddress">Phone Number</label>
+                                    <input class="form-control" maxlength="10" id="inputEmailAddress" type="text" placeholder="Enter your phoneNumber" name="phoneNumber" pattern="[1-9]{1}[0-9]{9}">
+                                    
+                                
+                                </div>  
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputPhone">Date Of Birth</label>
+                                    <input class="form-control" type="date" id="birthday" name="dob" required="required"> </div>
+                                
+                       <div class="col-md-6">
+                                    <label class="small mb-1" for="inputPhone">passing Year</label>
+                                    <input class="form-control" type="Date" id="date" name="passingYear" required="required"> </div>
+                               
+                            </div>
+                                
+
+
+
+                            <div class="row gx-3 mb-3"style="font-weight:bold">
+                             
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputPhone">Roll-Number</label>
+                                    <input class="form-control" id="inputPhone" type="text" placeholder="Enter your phone number"  required="required" name="rollNo"  pattern="[1-9]{1}[0-9]{9}" maxlength="12">
+                                </div> 
+                                <div class="col-md-4">
+                                        <label class="small mb-1" for="inputEmailAddress">Your Gender</label>
+                                        <select class="form-select" aria-label="Default select example" name="gender" required="required">
+                                            <option selected>Gender</option>
+                                            <option value="1">Male</option>
+                                            <option value="2">Female</option>
+                                        
+                                        </select>
+                                </div>
+                            
+                            </div>
+
+
+
+                            <div class="row gx-3 mb-3"style="font-weight:bold">
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputEmailAddress">Current-Adress</label>
+                                    <input class="form-control" id="inputEmailAddress"  placeholder="Enter your Current-address" name="presentAddress" required="required">
+                                    
+                                
+                                </div> 
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputEmailAddress">Permanent-Adress</label>
+                                    <input class="form-control" id="inputEmailAddress"  placeholder="Enter your Permanent-address" name="permanentAddress" required="required">
+                                    
+                                
+                                </div> 
+                                
+                               
+                            </div>
+                            <div class="row gx-3 mb-3"style="font-weight:bold">
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputEmailAddress">Job profile</label>
+                                    <input class="form-control" id="inputEmailAddress"  placeholder="Enter Your job profile" name="jobProfile" required="required">
+                                    
+                                
+                                </div> 
+                                <div class="col-md-6"style="font-weight:bold">
+                                    <label class="small mb-1" for="inputEmailAddress">Job Location</label>
+                                    <input class="form-control" id="inputEmailAddress"  placeholder="Enter Your Job Location" name="jobLocation" required="required">
+                                    
+                                
+                                </div> 
+                                
+                               
+                            </div>
+                            <div class="row gx-3 mb-3"style="font-weight:bold">
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputEmailAddress">Company Name</label>
+                                    <input class="form-control" id="inputEmailAddress"  placeholder="Enter Your Company Name" name="companyName" required="required">
+                                    
+                                
+                                </div> 
+                                <!-- <div class="col-md-6"style="font-weight:bold">
+                                  <label class="small mb-1" for="inputEmailAddress">Job Location</label>
+                                  <input class="form-control" id="inputEmailAddress" type="joblocation" placeholder="" >
+                                  
+                              
+                              </div>  -->
+                               
+                                
+                               
+                            </div>
+
+
+                            <div class="row gx-3 mb-3 form-group"style="font-weight:bold">
+                                
+                                 <div class="col-md-12">
+                                    <label class="small mb-1" for="inputEmailAddress">Skill</label>
+                                    <input class="form-control" style="height:100px;" id="inputEmailAddress" type="joblocation" placeholder="Enter your skills" name="skills" required="required">
+                                    
+                                
+                                </div> 
+                               
+                            </div>
+                            <div class="row gx-3 mb-3"style="font-weight:bold">
+                                <div class="col-md-12">
+                                    <label class="small mb-1" >Bio</label>
+                                    <input class="form-control" id="inputEmailAddress" type="bio" placeholder="Enter Your Bio" style="height:100px;" name="bio" required="required">
+                                    
+                                
+                                </div> 
+                                
+                               
+                            </div>
+
+
+                               
+                           
+
+                          
+                           
+                            <button class="btn btn-primary" type="submit">Save changes</button>
+
+
+                        </form>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script th:src="@{assets/js/jquery.min.js}"></script>
+  <script th:src="@{assets/js/popper.js}"></script>
+  <script th:src="@{assets/js/bootstrap.min.js}"></script>
+  <script th:src="@{assets/js/main2.js}"></script>
+   
+    <!-- Vendor JS Files -->
+	<script th:src="@{assets/vendor/purecounter/purecounter.js}"></script>
+	<script th:src="@{assets/vendor/aos/aos.js}"></script>
+	<script th:src="@{assets/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+	<script th:src="@{assets/vendor/glightbox/js/glightbox.min.js}"></script>
+	<script th:src="@{assets/vendor/isotope-layout/isotope.pkgd.min.js}"></script>
+	<script th:src="@{assets/vendor/swiper/swiper-bundle.min.js}"></script>
+	<script th:src="@{assets/vendor/waypoints/noframework.waypoints.js}"></script>
+	<script th:src="@{assets/vendor/php-email-form/validate.js}"></script>
+  
+	<!-- Template Main JS File -->
+	<script th:src="@{assets/js/main.js}"></script>
+    <script type="text/javascript" th:src="@{/js/script.js}"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+   
+</body>
+</html>

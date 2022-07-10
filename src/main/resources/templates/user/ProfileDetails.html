@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="user/base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title></title>
+</head>
+<body>
+	<section>
+	
+	<section class="section about-section gray-bg profilesection" id="about">
+			<div class="alert alert-success alert-dismissible fade show" th:if="${session.message}"  id="message1"	 role="success">
+  <strong th:text="${session.message}"></strong> 
+  <a class="close" data-dismiss="alert" aria-label="Close">
+  <th:block th:text="${#session.removeAttribute('message')}"></th:block>
+    <span aria-hidden="true">&times;</span>
+  </a>
+</div>
+            <div class="container" th:each="uf : ${userFullInfo}">
+                <div class="row align-items-center flex-row-reverse">
+                    <div class="col-lg-6" >
+           
+                        <div class="about-text go-to">
+                            <h3 class="dark-color"   th:text="${uf.user.fullName}"></h3>
+                            <h6 class="theme-color lead" th:text="${uf.bio}"></h6>
+                            <p>I am a <mark th:text="${uf.jobProfile}"></mark >at</p> <mark  th:text="${uf.companyName}"></mark >
+                            <div class="row about-list">
+                                <div class="col-md-6">
+                                    <div class="media">
+                                        <label>Birthday</label>
+                                        <p th:text="${uf.dob}"></p>
+                                    </div>
+                                    <div class="media">
+                                        <label style="margin-right: 20px;">Passing.Year</label>
+                                        <p th:text="${uf.passingYear}">22 Yr</p>
+                                    </div>
+                                    <div class="media">
+                                        <label>Residence</label>
+                                        <p th:text="${uf.permanentAddress}">Canada</p>
+                                    </div>
+                                    <div class="media">
+                                        <label> Address</label>
+                                        <p th:text="${uf.presentAddress}">California, USA</p>
+                                    </div>
+                                    <div class="media">
+                                        <label>city</label>
+                                        <p th:text="${uf.city}"></p>
+                                    </div>
+                                    <div class="media">
+                                        <label>state</label>
+                                        <p th:text="${uf.state}"></p>
+                                    </div>
+                                    
+                                    <div class="media">
+                                        <label>job.Location</label>
+                                        <p th:text="${uf.jobLocation}"></p>
+                                    </div>
+                                    
+                                    
+                                    
+                     
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="media">
+                                        <label>E-mail</label>
+                                        <p th:text="${uf.user.email}">info@domain.com</p>
+                                    </div>
+                                    <div class="media">
+                                        <label>Phone</label>
+                                        <p th:text="${uf.phoneNumber}">820-885-3321</p>
+                                    </div>
+                                    <div class="media">
+                                        <label>Roll.No</label>
+                                        <p th:text="${uf.rollNo}">skype.0404</p>
+                                    </div>
+                                    <div class="media">
+                                        <label>Father</label>
+                                        <p th:text="${uf.fatherName}"></p>
+                                    </div>
+                                     <div class="media">
+                                        <label>Mother</label>
+                                        <p th:text="${uf.motherName}"></p>
+                                    </div>
+                                      <div class="media">
+                                        <label>state</label>
+                                        <p th:text="${uf.state}"></p>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="useravatar">
+                            <img th:src="@{'/images/'+${uf.profileImage}}"   title="" alt="">
+                            <div class="profileButtons">
+                            <div class="profile-buttons">
+                            <a th:href=@{/user/update-profile}><button type="button" class="btn btn-outline-primary" >Update</button></a>
+                            <button type="button" class="btn btn-outline-danger" th:onclick="|deleteUser(${uf.id})|" >Delete</button>
+                            </div>
+                       </div>
+
+</div>
+                       
+                    </div>
+                </div>
+              
+            </div>
+            
+        </section>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	</section>
+	</body>
+	</html>

@@ -1,0 +1,388 @@
+/*
+    DEMO STYLE
+*/
+
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fafafa;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
+}
+  input[type=number].no-spinner::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+     margin: 0; 
+}
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.navbar {
+    padding: 15px 10px;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
+}
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    background: #7eaafa;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: #7eaafa;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid #47748b;
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+
+#sidebar ul li a:hover {
+    color: #7386D5;
+    background: #fff;
+}
+
+#sidebar ul li.active>a,
+a[aria-expanded="true"] {
+    color: #fff;
+    background: #7eaafa;
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #7eaafa;
+}
+
+ul.CTAs {
+    padding: 20px;
+}
+
+ul.CTAs a {
+    text-align: center;
+    font-size: 0.9em !important;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+a.download {
+    background: #fff;
+    color: #7386D5;
+}
+
+a.article,
+a.article:hover {
+    background: #6d7fcc !important;
+    color: #fff !important;
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+#content {
+    width: 100%;
+    padding: 20px;
+    min-height: 100vh;
+    transition: all 0.3s;
+}
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #sidebarCollapse span {
+        display: none;
+    }
+}
+.button {
+    display: inline-block;
+    /* border: 0.5px solid rgb(68, 122, 127); */
+ 
+    padding: 10px 20px;
+    color: rgb(7, 0, 0);
+    text-decoration: none;
+    text-align: center;
+    transition: 0.5s;
+  }
+  
+  .button:hover {
+    background: rgb(166, 193, 246);
+    color: rgb(251, 251, 251);
+  }
+  
+  .search-result{
+  position: absolute;
+  background: white;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid gray;
+  display: none;
+  
+  }
+  
+  .description{
+    overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  }
+  
+  
+  .evetntdetail-card{
+  display: block;
+          padding: 3vh 2vh 7vh 5vh;
+          border: none;
+          border-radius: 15px;
+          margin-top: 5%;
+          margin-bottom: 5%;
+          max-width: 550px;
+           box-shadow: 0 8px 8px -4px lightblue;
+  }
+  .evetntdetail-card p.heading{
+        font-weight: bold;
+          font-size: 25px;
+  }
+  
+   .evetntdetail-card .title{
+   font-size: 40px;
+   font-weight: bold;
+   color: gray;
+   }
+  
+  .evetntdetail-card  p.text-muted{
+  font-size: 17px;
+          font-weight: bold;
+          color: #a1a7ae!important;
+  }
+ .sidebar{
+ margin-top: 100px;
+
+ 
+ }
+ 
+ .jobcontainer{
+ margin-top: -70px;
+
+ }
+ 
+ 
+ .postjobcontainer{
+  margin-top: -130px;
+ }
+ 
+ /* jobs css */
+ 
+ .jobs p{
+ margin-bottom: 2px;
+ float:left;
+ 
+ }
+ 
+ /*  */
+ 
+
+ 
+  .logo{
+          
+          margin-right: 20px;
+          margin-bottom: 20px;
+      }
+      
+ .logo img{
+  width: 160px;
+  height: 160px;
+      }
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+ .event-span{
+ font-size: 17px;
+ font-weight:bold;
+ margin-bottom:20px; 
+ }
+ .event-span .span1{
+ color: grey;
+ 
+ }
+  .span1{
+  color: grey;
+  font-weight:600;
+  }
+  
+  .eventdetailscard{
+  margin-bottom: 400px;
+  
+  }
+  .logo{
+          border: 1px solid #f6f6f6;
+      }
+      
+      .logo img{
+          width: 160px;
+          height: 160px;
+      }
+      .card{
+          display: block;
+          padding: 3vh 2vh 7vh 5vh;
+          border: none;
+          border-radius: 15px;
+          margin-top: 5%;
+          margin-bottom: 5%;
+          max-width: 550px;
+      }
+      .header{
+          margin-bottom: 5vh;
+          margin-right: 2vh;
+          float: right;
+          margin-left: auto;
+      }
+      
+      .far{
+          color: rgba(15, 198, 239, 0.97)!important;
+          font-size: 16px!important;
+      }
+      p.heading{
+          font-weight: bold;
+          font-size: 25px;
+      }
+      p.text-muted{
+          font-size: 17px;
+          font-weight: bold;
+          color: #a1a7ae!important;
+      }
+      .btn-sm{
+          border-radius: 8px;
+      }
+      .fas.fa-users{
+          color: rgba(15, 198, 239, 0.97)!important;
+      }
+      .mutual span{
+          font-size: 14px;
+          color: #adb5bd;
+          font-weight: bold;
+      }
+      .btn-primary.btn-lg{
+          border-radius: 30px;
+          width: 90%;
+          border: none;
+          background: #8c02e3;
+      }
+      .btn-dark.btn-lg{
+          border-radius: 30px;
+          width: 90%;
+          border: none;
+          background: #dee2e6;
+      }
+      .btn-dark span{
+          font-size: 14px;
+          text-align: center;
+          color: #0000008c;
+          font-weight: bold;
+      }
+      .btn-primary span{
+          font-size: 14px;
+          text-align: center;
+          color: #fff;
+          font-weight: bold;
+      }
+      
+      .changepasswordcard{
+      margin-left: 350px;
+      margin-top: -20px;
+      
+      }
+      
+      .msgcontainer{
+      
+      margin-left: 400px;
+      margin-top: 20px;
+      }
+      

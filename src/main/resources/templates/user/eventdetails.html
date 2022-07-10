@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="user/base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title></title>
+</head>
+<body>
+<section>
+<div class="container jobcontainer">
+ <div class="row ">
+
+          
+              <div class="col-md-12 mb-5 align-items-stretch eventdetailscard"  data-aos="fade-up" th:object="${event}">
+                <div class="card mx-auto evetntdetail-card">
+                  <div class="row">
+                    <span class="title" th:text="${event.eventName}">TITLE:</span>
+               
+                    
+                      <!-- <div class="header right"><i class="fas fa-ellipsis-h"></i></div> -->
+                  </div>
+                     
+                      
+                   <span class="event-span" > Discription:</span><span  th:text="${event.aboutEvent}" class="span1"></span>
+                
+                    
+                          <br>
+                       
+                         <span class="event-span">Organiser:   <span class="span1" th:text="${event.orginizedBy}"></span></span>
+                         
+                         <span class="event-span">Organiser contact:  <span  class="span1" th:text="${event.orgnizersContact}"></span></span>
+            
+                         <span class="event-span">Date:  <span class="span1"  th:text="${event.dateOfEvent}"></span></span>
+                   
+                    <span class="event-span">Start Time:  <span class="span1"   th:text="${event.startTime}"></span></span>
+                     <span class="event-span">End Time:  <span  class="span1"  th:text="${event.endTime}"></span></span>
+                    
+                    
+                     
+          
+       
+              </div>
+              </div>
+  
+              
+         
+  
+  
+  
+              
+                    </div>
+
+          
+</div>
+
+</section>
+
+</body>
+</html>

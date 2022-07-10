@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="user/base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title></title>
+</head>
+<body>
+<section>
+
+<section class="services wrapper">
+          <div class="container">
+    
+            <div class="row" >
+             
+    
+              <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100" th:each="e: ${events}" >
+                <div class="icon-box icon-box-cyan" style="border-radius: 3px;" id="dash">
+                  <div class="icon"><i class="bx bx-file"></i></div>
+                  
+                  
+                  <h4 class="title" th:text=${e.eventName}><a href="eventsfile.html" >e-sport games</a></h4>
+                  <p class="description" th:text="${e.aboutEvent}">You can find daily basis news here about exams practical etc</p>
+                    <br>
+                    <br>
+                  <a th:href="@{'/user/eventdetails/'+${e.evid}}">read More</a>
+
+                </div>
+              </div>
+            </div>
+    
+            </div>
+    
+        
+        </section>
+
+</section>
+
+
+</body>
+</html>

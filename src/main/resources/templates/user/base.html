@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org" th:fragment="layout(content)">
+
+<head>
+  <title th:text="${title}"></title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <link th:href="@{/assets/img/favicon.png}" rel="icon">
+  <link th:href="@{/assets/img/apple-touch-icon.png}" rel="apple-touch-icon">
+  <link href='https://fon ts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link th:href="@{/assets/vendor/animate.css/animate.min.css}" rel="stylesheet">
+  <link th:href="@{/assets/vendor/aos/aos.css}" rel="stylesheet">
+  <link th:href="@{/assets/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+  <link th:href="@{/assets/vendor/bootstrap-icons/bootstrap-icons.css}" rel="stylesheet">
+  <link th:href="@{/assets/vendor/boxicons/css/boxicons.min.css}" rel="stylesheet">
+  <link th:href="@{/assets/vendor/glightbox/css/glightbox.min.css}" rel="stylesheet">
+  <link th:href="@{/assets/vendor/swiper/swiper-bundle.min.css}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link th:href="@{/assets/css/style.css}" rel="stylesheet">
+  <link th:href="@{/assets/css/profile.css}" rel="stylesheet">
+  
+    <link th:href="@{/css/search.css}" rel="stylesheet">
+
+<link rel="stylesheet" th:href="@{/assets/css/usersdashbord.css}">
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+     <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    
+    
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
+
+  
+  </head>
+
+<!-- <body   style="background-image: linear-gradient(to bottom, rgba(102, 155, 184, 0.8), rgba(33, 82, 106, 0.6)), url(assets/img/hero-bg.jpg);"> -->
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+                  <div class="col lg-5 updateprofile" >
+                        <div class="">
+                            <img th:src="@{'/images/'+${profileImage}}"   title="" alt="">
+                            <div class="profileButtons">  
+                       </div>
+
+</div>
+                       
+                    </div>
+
+            <ul class="list-unstyled components sidebar" style="margin-left:60px">
+                <li class="active">
+                    <a th:href="@{/user/dashboard}" th:text="${username}">Home</a>
+                   
+                </li>
+                
+                
+                <li class="active">
+                    <a th:href="@{/user/dashboard}" >Home</a>
+                   
+                </li>
+                <li class="active">
+                    <a th:href="@{/user/profile}">profile</a>
+                </li>
+                <li class="active">
+                    <a th:href="@{/user/jobs}">jobs</a>
+                    
+                        </li>
+                <li class="active">
+                    <a th:href="@{/user/events/}">Events</a>
+                        </li>
+                <li class="active">
+                    <a th:href="@{/user/postJob}">Post Job</a>
+                        </li>
+                        </li>
+                <li class="active">
+                    <a th:href="@{/user/setting}">Settings</a>
+                        </li>
+                    </ul>
+                
+                
+            
+            <ul class="list-unstyled CTAs">
+                
+                <li>
+                   <a th:href=@{/logout}> <button type="submit"  class="button" style="margin-right: 30px;">Log out</button> </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content" >
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        <span></span>
+                    </button>
+                    <!-- <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify">username</i>
+                    </button> -->
+                    
+                    <div class="col-md-6 mb-4">
+                     <form th:action="@{/user/search}" th:object="${query}" >
+                      <div class="input-group md-form form-sm form-2 pl-0" style="margin-top: 6px;">
+                       <input class="form-control my-0 py-1 amber-border" name="name"   type="text" placeholder="Search your friends..." aria-label="Search" id="search-input">
+                        <div class="input-group-append" >
+                        <button type="submit" class="search-button"> <span class="input-group-text amber lighten-2" id="basic-text1" ><i class="fas fa-search "
+                                                                                             aria-hidden="true" ></i></span></button> 
+                                                                                       
+                        </div>
+                      </div>
+                 </form>
+                    </div> 
+                   
+                    
+                </div>
+            </nav>
+             
+
+            
+
+    <main id="main" style="margin-top: -20px;" th:replace="${content}">
+
+       
+     
+</main>
+      
+    
+
+        </div>
+
+
+        
+
+    </div> 
+   
+      <!-- Vendor JS Files -->
+      <script th:src="@{/assets/vendor/purecounter/purecounter.js}"></script>
+  <script th:src="@{/assets/vendor/aos/aos.js}"></script>
+  <script th:src="@{/assets/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+  <script th:src="@{/assets/vendor/glightbox/js/glightbox.min.js}"></script>
+  <script th:src="@{/assets/vendor/isotope-layout/isotope.pkgd.min.js}"></script>
+  <script th:src="@{/assets/vendor/swiper/swiper-bundle.min.js}"></script>
+  <script th:src="@{/assets/vendor/waypoints/noframework.waypoints.js}"></script>
+  <script th:src="@{/assets/vendor/php-email-form/validate.js}"></script>
+      
+    
+      <!-- Template Main JS File -->
+      <script  th:src="@{/assets/js/main.js}"></script>
+      	      <script  th:src="@{/js/script.js}"></script>
+    <script type="text/javascript" th:src="@{/js/script.js}"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" ></script>
+  <script src='http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.js'></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js">
+    </script>
+     <script src=
+"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">
+    </script>
+   <script type="text/javascript" src=
+"https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js">
+    </script>
+     <script src=
+"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js">
+        </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

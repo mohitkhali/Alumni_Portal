@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html  lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="admin/base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>profile</title>
+</head>
+<body>
+
+<section >
+            <div class="container userprofile" th:object="${event}">
+                <div class="row align-items-center flex-row-reverse">
+                    <div class="col-lg-6" >
+                        <div class="about-text go-to">
+                         <h6 class="theme-color lead" th:text="${event.eventName}"></h6>
+                            <p class="dark-color" th:text="${event.aboutEvent}"></p>
+                           
+                            <p> Date :<mark th:text="${event.dateOfEvent}"></mark ></p>
+                            <div class="row about-list">
+                                <div class="col-md-6">
+                                    <div class="media">
+                                        <label>Start.time</label>
+                                        <p th:text="${event.startTime}"></p>
+                                    </div>
+                                    
+                                    <div class="media">
+                                        <label>Organizer</label>
+                                        <p th:text="${event.orginizedBy}"></p>
+                                    </div>
+                                    <div class="media">
+                                        <label>Organizer.Contact</label>
+                                        <p th:text="${event.orgnizersContact}"></p>
+                                    </div>
+                                   
+  
+                                </div>
+                                   <div class="col-md-6">
+                                    <div class="media">
+                                        <label>End.Time</label>
+                                        <p th:text="${event.endTime}"></p>
+                                    </div>
+                                     <div class="media">
+                                        <label>Organizer.Contact</label>
+                                        <p th:text="${event.orgnizersContact}"></p>
+                                    </div>
+                                    	
+                                    
+                                </div>
+                              
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="useravatar">
+                            <img th:src="@{'/images/'+${event.banner}}"   title="" alt="">
+                            <div class="profileButtons">
+                            
+                            <button type="button" class="btn btn-outline-danger" th:onclick="|deleteEvent(${event.evid})|" >Delete</button>
+                       </div>
+
+</div>
+                       
+                    </div>
+                </div>
+              
+            </div>
+        </section>
+
+
+</body>
+</html>

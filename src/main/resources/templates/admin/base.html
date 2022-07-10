@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:fragment="layout(content)">
+  <head>
+  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/style1.css}" />
+      <link rel="stylesheet" th:href="@{/css/view.css}" />
+    <link rel="stylesheet" th:href="@{/css/add.css}" />
+     <link rel="stylesheet" th:href="@{/css/UD.css}" />
+     <link rel="stylesheet" th:href="@{/css/profile.css}" />
+      <link rel="stylesheet" th:href="@{/css/dash.css}" />
+       <link href=
+"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+        rel="stylesheet">
+         <link
+        href=
+"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css"
+        rel="stylesheet">
+     <link rel="stylesheet" th:href="@{/css/update.css}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title th:text="${title}"></title>
+  </head>
+  <body>
+  <input type="checkbox" id="check" >
+<header>
+<label for="check">
+<i class="fa fa-bars" id="sidebar_btn"></i>
+</label>
+
+<div class="left-area">
+<h3>AD<span>MIN</span></h3>
+</div>
+<div class="right-area">
+
+<a th:href="@{/logout}" class="logout_btn">Logout</a>
+</div>
+ <div class="message">
+ <div th:if="${session.message}" class="alert" id="message1"	style="font-size: 20px;"
+						role="alert">
+						<p class="text-center" th:text="${session.message}"></p>
+
+						<th:block th:text="${#session.removeAttribute('message')}"></th:block>
+
+	</div>
+  </div>
+</header>
+   <div class="sidebar">
+   <a  th:href="@{/admin/dashboard}"><i class="fa fa-home"></i><span>DashBoard</span> </a>
+    <a  th:href="@{/admin/unverifiedList/0}"><i class="fa fa-table"></i><span>unverifiedUser</span></a>
+    <a  th:href="@{/admin/verifiedList/0}"><i class="fa fa-table"></i><span>verifiedUser</span></a>
+      <a th:href="@{/admin/export}"><i class="fa fa-info-circle"></i><span>export Users</span></a>
+       <a th:href="@{/admin/Event}"><i class="fa fa-info-circle"></i><span>post Event</span></a>
+        <a th:href="@{/admin/viewevents/0}"><i class="fa fa-info-circle"></i><span>View Event </span></a>
+       <a th:href="@{/admin/feedback/0}"><i class="fa fa-info-circle"></i><span>feedback</span></a>
+             <a th:href="@{/admin/email}"><i class="fa fa-info-circle"></i><span>Email</span></a>
+       
+   </div>
+     <div  th:replace="${content}" class="content"></div>
+   	<script th:src="@{/js/script.js}"></script>
+   	 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" ></script>
+  <script src='http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.js'></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js">
+    </script>
+     <script src=
+"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">
+    </script>
+   <script type="text/javascript" src=
+"https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js">
+    </script>
+     <script src=
+"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js">
+        </script>
+
+  
+  
+  </body>
+</html>

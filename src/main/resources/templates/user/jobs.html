@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="user/base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title></title>
+</head>
+<body>
+<section>
+ <div class="container jobcontainer" >
+
+           <div class="row jobs">
+
+          
+            <div class="col-md-4 align-items-stretch" data-aos="fade-up" th:each="j:${job}" >
+              <div class="card mx-auto">
+                <div class="row">
+                  <p class="heading" style="font-size: 19px;" th:text="${j.companyName}" ></p>
+                    <div class="logo "><img th:src="@{/assets/img/features-3.svg}"></div>             
+                </div>
+                   
+                    
+                    <p class="text-muted" style="font-size: small;" th:text="${j.aboutJob}"></p>
+                    <div class="row btnrow my-4">
+                       
+                       <p class="text-muted mr-2px;" style="font-size: small;  font-weight:bold"  th:text="'Role'+'-'+ ${j.jobRole}">  </p>
+                        <p class="text-muted" style="font-size: small;font-weight:bold" th:text="'Job Location'+'-'+${j.location}"> </p>
+                        <p class="text-muted " style="font-size: small;font-weight:bold" th:text="'skills'+'-'+${j.requiredSkills}"></p>
+                        <p class="text-muted " style="font-size: small;font-weight:bold" th:text="'experience'+'-'+${j.experience}+'years'"></p>
+                         <p class="text-muted " style="font-size: small;font-weight:bold" th:text="'salray'+'-'+${j.salary}+'per/year'"></p>
+                    
+                    </div>
+        
+     
+                    <div class="row btnsubmit mt-4 ">
+                        <div class="col-md-6 col-6">
+                            <a th:href="@{'/user/search?name='+${j.user.fullName}}"><button type="button" class="btn btn-primary btn-lg" ><span >Ask Reference</span></button></a>
+                            
+                        </div>
+                         <div class="col-md-6 col-6">
+                             <a th:href="|${j.companyWebsite}|"><button type="button" class="btn btn-primary btn-lg" ><span >Website</span></button></a>
+                        </div>
+                        
+                    </div>
+                       <div class="row btnsubmit mt-4">
+                       
+                       <div class="col-md-12 col-6">
+                             <a th:href="|${j.applyLink}|"><button type="button" class="btn btn-primary btn-lg" ><span>Apply Now</span></button></a>
+                        </div>
+                        
+                    </div>
+            </div>
+            </div>
+            </div>
+    
+        
+</div>
+                
+           
+
+</section>
+
+</body>
+</html>

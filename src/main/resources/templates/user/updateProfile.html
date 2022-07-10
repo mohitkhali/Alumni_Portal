@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="user/base::layout(~{::section})">
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+	<section >
+	   <div class="row updatecontainer">
+  <div class="col-xl-12">
+                <!-- Account details card-->
+                <div class=" mb-4 updatecontainer">
+                    <div class="card-header">Update Details</div>
+                    <div class="card-body">
+                        
+                            <!-- --------------------------------------FORM------------------------------------------ -->
+                         
+                            <form th:action=@{/user/update-profile} method="post" enctype="multipart/form-data" th:object="${userFullInfo}">  
+ 
+
+                            <div class="col-xl-12 ">
+               
+                    <div class="card mb-6 mb-xl-0"style="height: 160px;">
+                    
+                        <div class="card-body text-center"  >
+                           
+                        
+                            <div class="small font-italic text-muted mb-4" style="font-weight: bold;">Upload Your Profile Picture</div>
+                   
+                            <div class="form-group">
+                        
+                              <input type="file" id="file" name="userProfileImage" accept="image/png, image/gif, image/jpeg" >
+                            
+                            </div>
+                        </div>
+                    </div>
+            </div><br>
+                           
+                           
+                           
+                            <div class="row gx-3 mb-3 form-group"style="font-weight:bold">
+                             <div class="col-md-6" th:object="${user}">
+                                    <label class="small mb-1" for="fathername" >Full Name</label>
+                                    <input th:value="${userFullInfo.user.fullName}"   class="form-control" id="fathername" type="text" placeholder="Enter your Father's Name"  name="fullName"  required>
+                                </div>
+                               
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="fathername">Father's Name</label>
+                                    <input th:value="${userFullInfo.fatherName}"   class="form-control" id="fathername" type="text" placeholder="Enter your Father's Name" name="fatherName"  required>
+                                </div>
+                             
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="mothername">Mother's Name</label>
+                                    <input class="form-control" th:value="${userFullInfo.motherName}"    id="mothername" type="text" placeholder="Enter your Mother's Name" name ="motherName" required="required">
+                                </div>
+                            </div>
+                            
+                            <div class="row gx-3 mb-3"style="font-weight:bold">
+                            
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputOrgName">City</label>
+                                    <input th:value="${userFullInfo.city}"  class="form-control" id="inputOrgName" type="text" placeholder="Enter your City" name="city" required="required">
+                                </div>
+                            
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputLocation">State</label>
+                                    <input th:value="${userFullInfo.state}"  class="form-control" id="inputLocation" type="text" placeholder="Enter your State" name="state" required="required">
+                                
+                                </div>
+                               
+                            </div>
+                            
+                            <div class="row gx-3 mb-3"style="font-weight:bold">
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputEmailAddress">Phone Number</label>
+                                    <input th:value="${userFullInfo.phoneNumber}"  class="form-control" maxlength="10" id="inputEmailAddress" type="text" placeholder="Enter your phoneNumber" name="phoneNumber" pattern="[1-9]{1}[0-9]{9}">
+                                    
+                                
+                                </div>  
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputPhone">Date Of Birth</label>
+                                    <input th:value="${userFullInfo.dob}"  class="form-control"  type="date" id="birthday" name="dob" required="required"> </div>
+                                
+                       <div class="col-md-6">
+                                    <label class="small mb-1" for="inputPhone">passing Year</label>
+                                    <input th:value="${userFullInfo.passingYear}"  class="form-control" type="Date" id="date" name="passingYear" required="required"> </div>
+                               
+                            </div>
+                                
+
+
+
+                            <div class="row gx-3 mb-3"style="font-weight:bold">
+                             
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputPhone">Roll-Number</label>
+                                    <input th:value="${userFullInfo.rollNo}"  class="form-control" id="inputPhone" type="text" placeholder="Enter your phone number"  required="required" name="rollNo"  pattern="[1-9]{1}[0-9]{9}" maxlength="12">
+                                </div> 
+                                <div class="col-md-4">
+                                        <label class="small mb-1" for="inputEmailAddress" ></label>
+                                        <select    class="form-select" aria-label="Default select example" name="gender" required="required">
+                                            <option  th:text="${userFullInfo.gender}"  selected></option>
+                                            <option value="1">Male</option>
+                                            <option value="2">Female</option>
+                                        
+                                        </select>
+                                </div>
+                            
+                            </div>
+
+
+
+                            <div class="row gx-3 mb-3"style="font-weight:bold">
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputEmailAddress">Current-Adress</label>
+                                    <input th:value="${userFullInfo.presentAddress}"  class="form-control" id="inputEmailAddress"  placeholder="Enter your Current-address" name="presentAddress" required="required">
+                                    
+                                
+                                </div> 
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputEmailAddress">Permanent-Adress</label>
+                                    <input th:value="${userFullInfo.permanentAddress}"  class="form-control" id="inputEmailAddress"  placeholder="Enter your Permanent-address" name="permanentAddress" required="required">
+                                    
+                                
+                                </div> 
+                                
+                               
+                            </div>
+                            <div class="row gx-3 mb-3"style="font-weight:bold">
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputEmailAddress">Job profile</label>
+                                    <input th:value="${userFullInfo.jobProfile}"  class="form-control" id="inputEmailAddress"  placeholder="Enter Your job profile" name="jobProfile" required="required">
+                                    
+                                
+                                </div> 
+                                <div class="col-md-6"style="font-weight:bold">
+                                    <label class="small mb-1" for="inputEmailAddress">Job Location</label>
+                                    <input th:value="${userFullInfo.jobLocation}"   class="form-control" id="inputEmailAddress"  placeholder="Enter Your Job Location" name="jobLocation" required="required">
+                                    
+                                
+                                </div> 
+                                
+                               
+                            </div>
+                            <div class="row gx-3 mb-3"style="font-weight:bold">
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputEmailAddress">Company Name</label>
+                                    <input th:value="${userFullInfo.companyName}"  class="form-control" id="inputEmailAddress"  placeholder="Enter Your Company Name" name="companyName" required="required">
+                                    
+                                
+                                </div> 
+                                <!-- <div class="col-md-6"style="font-weight:bold">
+                                  <label class="small mb-1" for="inputEmailAddress">Job Location</label>
+                                  <input class="form-control" id="inputEmailAddress" type="joblocation" placeholder="" >
+                                  
+                              
+                              </div>  -->
+                               
+                                
+                               
+                            </div>
+
+
+                            <div class="row gx-3 mb-3 form-group"style="font-weight:bold">
+                                
+                                 <div class="col-md-12">
+                                    <label class="small mb-1" for="inputEmailAddress">Skill</label>
+                                    <input th:value="${userFullInfo.skills}"  class="form-control" style="height:100px;" id="inputEmailAddress" type="joblocation" placeholder="Enter your skills" name="skills" required="required">
+                                    
+                                
+                                </div> 
+                               
+                            </div>
+                            <div class="row gx-3 mb-3"style="font-weight:bold">
+                                <div class="col-md-12">
+                                    <label class="small mb-1" >Bio</label>
+                                    <input th:value="${userFullInfo.bio}"  class="form-control" id="inputEmailAddress" type="bio" placeholder="Enter Your Bio" style="height:100px;" name="bio" required="required">
+                                    
+                                
+                                </div> 
+                                
+                               
+                            </div>
+
+
+                               
+                           
+
+                          
+                           
+                            <button class="btn btn-primary" type="submit">Save changes</button>
+
+
+                        </form>
+                     </div>
+                </div>
+            </div>
+            </div>
+            </section>
+</body>
+</html>

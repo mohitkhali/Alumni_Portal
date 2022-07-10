@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="user/base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>DashBoard</title>
+</head>
+<body>
+
+<section>
+<div class="wrapper">
+<section class="services">
+        
+        <div class="container">
+        		<div class="alert alert-success alert-dismissible fade show" th:if="${session.msg}"  id="message1"	 role="success">
+  <strong th:text="${session.msg}"></strong> 
+  <a class="close" data-dismiss="alert" aria-label="Close">
+  <th:block th:text="${#session.removeAttribute('msg')}"></th:block>
+    <span aria-hidden="true">&times;</span>
+      
+  </a>
+</div>
+  
+          <div class="row">
+            <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up">
+              <div class="icon-box icon-box-pink">
+                <div class="icon"><i class="bx bxl-dribbble"></i></div>
+                <h4 class="title"><a th:href="@{/user/events/0}">EVENTS</a></h4>
+                <p class="description">uploading events in a daily basis curricular activities proforming in the universities are shown in this portal</p>
+              </div>
+            </div>
+  
+            <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+              <div class="icon-box icon-box-cyan">
+                <div class="icon"><i class="bx bx-file"></i></div>
+                <h4 class="title"><a href="">NEWS</a></h4>
+                <p class="description">You can find daily basis news here about exams practical etc</p>
+              </div>
+            </div>
+  
+            <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+              <div class="icon-box icon-box-green">
+                <div class="icon"><i class="bx bx-tachometer"></i></div>
+                <h4 class="title"><a href="">HELP</a></h4>
+                <p class="description">24/7 HELP providing by admin regarding any issue </p>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+              <div class="icon-box icon-box-blue">
+                <div class="icon"><i class="bx bx-world"></i></div>
+                <h4 class="title"><a href="post.html">JOBS</a></h4>
+                <p class="description">post jobs , internship by all the almuni or other  </p>
+              </div>
+  
+            </div>
+  
+  
+            </div>
+  
+          </div>
+
+        
+    </section>
+</div>
+
+</section>
+</body>
+</html>
